@@ -1,16 +1,10 @@
 import React from 'react'
 import { styled } from 'styled-components';
-import { FaPaperPlane } from 'react-icons/fa';
 
-const Submit = ({ onSubmit, title }) => {
-
-  const handleSubmit = (e) =>{
-    e.preventDefault()
-    onSubmit()
-  }
+const Submit = () => {
 
   return (
-    <ButtonSbumit onClick={(e)=>handleSubmit(e)} type='submit'>{title}<FaPaperPlane size={15} color='#201E50'/></ButtonSbumit>
+    <ButtonSbumit type='submit'>Enviar</ButtonSbumit>
   )
 }
 
@@ -19,7 +13,7 @@ const Submit = ({ onSubmit, title }) => {
 export default Submit
 
 const ButtonSbumit = styled.button`
-    margin-top: 30px;
+    margin-top: 20px;
     background-color: #C4F1BE;
     width: 300px;
     border-radius: 5px;

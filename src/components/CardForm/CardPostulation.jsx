@@ -10,7 +10,7 @@ const CardPostulation = ({index}) => {
 
   return (
     <PostulationContainer>
-      <p>name: {dataSelected.name}, surname: {dataSelected.surname}, email: {dataSelected.email}</p>
+      <p>name: {dataSelected.name}, surname: {dataSelected.surname}, email: {dataSelected.email}, id:{dataSelected.id}</p>
     </PostulationContainer>
   )
 }
@@ -18,13 +18,12 @@ const CardPostulation = ({index}) => {
 export default CardPostulation
 
 const PostulationContainer = styled.div`
-    margin: 5px;
     border: 2px solid #A2C3A4;
     width: 90%;
     padding: 10px;
     color: white;
     display: flex;
-    gap: 10px;
+    margin: 5px;
     p{
       font-size: 8px;
       margin: 0;

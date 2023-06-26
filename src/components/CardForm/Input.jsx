@@ -1,15 +1,21 @@
+import { ErrorMessage, Field } from "formik";
 import React from "react";
 import { styled } from 'styled-components';
 
 
-const Input = ({ label, type, name, handleChange, value }) => {
+const Input = ({ label, type, name, isError}) => {
     return (
         <InputBoxStyled>
           <InputLabelStyled htmlFor={label}>{label}</InputLabelStyled>
-            <InputStyled onChange={handleChange} value={value} name={name} type={type} id={label} ></InputStyled>
-            {
-                false && <ErrorStyled>Error</ErrorStyled>
-            }
+            <Field 
+            name={name} 
+            type={type} 
+            id={label} 
+            error={isError} 
+            as={InputStyled}/>
+            {!isError && <ErrorStyled/> }
+            <ErrorMessage name={name} component={ErrorStyled}/>
+            
         </InputBoxStyled>
       );
     };
@@ -24,13 +30,12 @@ const Input = ({ label, type, name, handleChange, value }) => {
   export const InputLabelStyled = styled.label`
     font-size: 12px;
     display: flex;
-    margin-top: 10px;
-    color: #C4F1BE;
+    color: #A2C3A4
   `;
   
   export const InputStyled = styled.input`
     border: 2px solid;
-    border-color: ${({ error }) => (error ? "red" : "#A2C3A4")};
+    border-color: #A2C3A4;
     padding: 5px;
     width: 300px;
     height: 35px;
@@ -41,6 +46,8 @@ const Input = ({ label, type, name, handleChange, value }) => {
   `;
   
   export const ErrorStyled = styled.span`
-    padding-left: 5px;
-    color: var(--error);
+    color: red;
+    font-size: 10px;
+    height: 15px;
   `;
+
