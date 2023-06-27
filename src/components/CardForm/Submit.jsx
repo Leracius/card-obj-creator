@@ -1,10 +1,10 @@
 import React from 'react'
 import { styled } from 'styled-components';
 
-const Submit = () => {
+const Submit = ({ title }) => {
 
   return (
-    <ButtonSbumit type='submit'>Enviar</ButtonSbumit>
+    <ButtonSbumit type='submit'>{title}</ButtonSbumit>
   )
 }
 
@@ -12,7 +12,7 @@ const Submit = () => {
 
 export default Submit
 
-const ButtonSbumit = styled.button`
+export const ButtonSbumit = styled.button`
     margin-top: 20px;
     background-color: #C4F1BE;
     width: 300px;

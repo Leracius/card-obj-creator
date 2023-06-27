@@ -8,11 +8,13 @@ const cardBaseStyles = `
 
 export const CardContainer = styled.div`
     ${cardBaseStyles}
+    padding: 30px;
     display: flex;
     border: 10px solid #201E50;
 
     @media screen and (max-width: 767px) {
-        flex-direction: column-reverse;
+        flex-direction: column;
+        padding: 10px;
     }
 `;
 
@@ -73,6 +75,10 @@ export const CardFlex = styled.div`
 export const CardRight = styled(Card)`
     display: flex;
     flex-direction: column;
+    margin-right: 3rem;
+    @media screen and (max-width: 767px) {
+        margin: 30px 0 30px 0;
+    }
 `;
 
 export const Form = styled(FormStyled)`

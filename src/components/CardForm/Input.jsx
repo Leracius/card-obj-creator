@@ -30,7 +30,8 @@ const Input = ({ label, type, name, isError}) => {
   export const InputLabelStyled = styled.label`
     font-size: 12px;
     display: flex;
-    color: #A2C3A4
+    color: #A2C3A4;
+    text-align: center;
   `;
   
   export const InputStyled = styled.input`
