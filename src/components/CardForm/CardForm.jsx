@@ -1,12 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
 import { AiFillDelete } from 'react-icons/ai';
+import { AiOutlineArrowLeft } from 'react-icons/ai';
 
 import {
   CardContainer,
   CardElStyled,
+  CardElStyled2,
   CardFlex,
   CardLeft,
   CardRight,
@@ -42,7 +44,11 @@ const CardForm = () => {
   const uniqueId = generateShortId(8);
   const { title, subtitle, check } = useSelector((state) => state.myString);
   const dataUser = useSelector((state) => state.newData.data);
+  const [active, setActive] = useState(false);
 
+  const handleClick = () => {
+    setActive(!active);
+  };
 
   const handleDelete = () => {
     dispatch(deleteData());
@@ -75,6 +81,7 @@ const CardForm = () => {
             }}
           >
             {({ errors, touched }) => (
+              <>
               <Form>
                 <Input
                   isError={errors.name && touched.name}
@@ -126,13 +133,17 @@ const CardForm = () => {
                 </div>
                 <Submit title={'ENVIAR'} />
               </Form>
+              
+              </>
             )}
           </Formik>
         </CardElStyled>
       </CardRight>
-      <CardLeft>
-        <h1>POSTULACIONES:</h1>
-        <CardElStyled>
+      {
+        !active?
+        <CardLeft>
+        <button onClick={handleClick} >❌</button>
+        <CardElStyled2>
           <CardFlex>
             {dataUser.map((el, index) => (
               <CardPostulation
@@ -141,13 +152,28 @@ const CardForm = () => {
               ></CardPostulation>
             ))}
           </CardFlex>
-        </CardElStyled>
+        </CardElStyled2>
+        <div>
         <AiFillDelete
-          size={35}
+          size={25}
           color="#C4F1BE"
-          onClick={handleDelete}
-        />
+          onClick={handleDelete}/>
+        </div>
+          
+
+        
       </CardLeft>
+        :
+      <>
+      <CardLeft>
+        <button onClick={handleClick}>ver data</button>
+      </CardLeft>
+      
+      </>
+
+
+      }
+
     </CardContainer>
   );
 };

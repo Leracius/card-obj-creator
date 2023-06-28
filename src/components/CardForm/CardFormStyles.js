@@ -1,16 +1,18 @@
 import { styled } from 'styled-components';
 import { Form as FormStyled } from 'formik';
 
+
+const background = '#201E50'
+
 const cardBaseStyles = `
     border-radius: 10px;
-    background-color: #201E50;
+    background-color: ${background};
 `;
 
 export const CardContainer = styled.div`
     ${cardBaseStyles}
-    padding: 30px;
     display: flex;
-    border: 10px solid #201E50;
+    border: 10px solid ${background};
 
     @media screen and (max-width: 767px) {
         flex-direction: column;
@@ -20,16 +22,16 @@ export const CardContainer = styled.div`
 
 export const Card = styled.div`
     ${cardBaseStyles}
-    width: 360px;
-    height: 460px;
+
     display: flex;
     align-items: center;
     flex-direction: column;
     text-align: center;
 
     h1 {
-        font-size: 26px;
+        font-size: 32px;
         color: #C4F1BE;
+        margin: 10px;
     }
 
     h4 {
@@ -41,18 +43,26 @@ export const Card = styled.div`
 
 export const CardLeft = styled(Card)`
     background-color: #525B76;
+    position: fixed;
+    padding: 10px;
+    left: 20px;
+    top: 80px;
+    @media screen and (max-width: 767px) {
+        left: 50;
+    }
+    button{
+        background-color: transparent;
+    }
 `;
 
 export const CardElStyled = styled.div`
-    width: 95%;
-    height: 75%;
     background-color: #201E50;
- 
     display: flex;
     align-items: center;
     flex-direction: column;
     overflow-y: scroll;
     margin-bottom: 5px;
+    padding: 20px;
 
     &::-webkit-scrollbar {
         background-color: #657091;
@@ -63,19 +73,45 @@ export const CardElStyled = styled.div`
         background-color: #C4F1BE;
         border-radius: 1px;
     }
+
 `;
 
-export const CardFlex = styled.div`
-    width: 100%;
+export const CardElStyled2 = styled.div`
+    background-color: #201E50;
     display: flex;
     align-items: center;
     flex-direction: column;
+    overflow-y: scroll;
+    margin: 5px;
+
+    &::-webkit-scrollbar {
+        background-color: #657091;
+        width: 5px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: #C4F1BE;
+        border-radius: 1px;
+    }
+
+`;
+
+
+export const CardFlex = styled.div`
+    width: 250px;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 5px;
 `;
 
 export const CardRight = styled(Card)`
     display: flex;
     flex-direction: column;
-    margin-right: 3rem;
+    width: 360px;
+    height: 460px;
+    padding: 20px;
     @media screen and (max-width: 767px) {
         margin: 30px 0 30px 0;
     }

@@ -10,7 +10,7 @@ const CardPostulation = ({index}) => {
 
   const {name, surname, email, id, age, driveLicense, exp, cellphone} = dataUser[index]
 
-  const [active, setActive] = useState("true")
+  const [active, setActive] = useState('')
 
   const handleClick = () =>{
     setActive(!active)
@@ -20,11 +20,13 @@ const CardPostulation = ({index}) => {
   return (
     <PostulationContainer onClick={handleClick} active={active}>
       {
-        !active?<>
+        active?
+        <AiFillMinusCircle size={20} color='#C4F1BE'/>
+        :
+        <>
         <AiFillPlusCircle size={20} color='#C4F1BE'/>
         <h2>{name} {surname} {age}</h2>
         </>
-        :<AiFillMinusCircle size={20} color='#C4F1BE'/>
       }
       
       {
@@ -45,18 +47,12 @@ const CardPostulation = ({index}) => {
 export default CardPostulation
 
 const PostulationContainer = styled.div`
-
-    /* height: ${(props) => (props.active ? '20px' : '200px')}; */
-
-
     border: 2px solid #A2C3A4;
-    width: 90%;
+    margin-bottom: 5px;
+    width: 95%;
     padding: 5px;
-    color:  white;
     display: flex;
-    transition: all 0.5s cubic-bezier(0.92, 0.01, 0.35, 0.99);
     flex-direction: ${(props) => (props.active ? 'column' : 'row')};
-    margin: 5px;
     h2{
       font-size: 14px;
       margin: 0 0 0 10px;

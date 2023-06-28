@@ -15,7 +15,7 @@ export default Submit
 export const ButtonSbumit = styled.button`
     margin-top: 20px;
     background-color: #C4F1BE;
-    width: 300px;
+    width: 100%;
     border-radius: 5px;
     color: #201E50;
     font-weight: 700;
@@ -24,6 +24,5 @@ export const ButtonSbumit = styled.button`
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 5px;
     cursor: pointer;
 `
