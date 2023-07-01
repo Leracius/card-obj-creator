@@ -3,18 +3,18 @@ import React from "react";
 import { styled } from 'styled-components';
 
 
-const Input = ({ label, type, name, isError}) => {
+const Input = (data: {label: string, name: string, type: string, isError: string, }) => {
     return (
         <InputBoxStyled>
-          <InputLabelStyled htmlFor={label}>{label}</InputLabelStyled>
+          <InputLabelStyled htmlFor={data.label}>{data.label}</InputLabelStyled>
             <Field 
-            name={name} 
-            type={type} 
-            id={label} 
-            error={isError} 
+            name={data.name} 
+            type={data.type} 
+            id={data.label} 
+            error={data.isError} 
             as={InputStyled}/>
-            {!isError && <ErrorStyled/> }
-            <ErrorMessage name={name} component={ErrorStyled}/>
+            {!data.isError && <ErrorStyled/> }
+            <ErrorMessage name={data.name} component={ErrorStyled}/>
             
         </InputBoxStyled>
       );

@@ -15,7 +15,7 @@ import {
 } from './CardFormStyles';
 
 import { setData, deleteData } from '../../redux/DataSlice';
-import generateShortId from '../Utils/utlis';
+import generateShortId from '../Utils/utils';
 
 import CardPostulation from './CardPostulation';
 import Input from './Input';
@@ -142,7 +142,7 @@ const CardForm = () => {
       {
         !active?
         <CardLeft>
-        <button onClick={handleClick} >❌</button>
+        <button onClick={handleClick} ><AiOutlineArrowLeft size={20} color="#C4F1BE"/></button>
         <CardElStyled2>
           <CardFlex>
             {dataUser.map((el, index) => (

@@ -2,9 +2,9 @@ import { styled } from 'styled-components';
 import { Form as FormStyled } from 'formik';
 
 
-const background = '#201E50'
+const background: string = '#201E50'
 
-const cardBaseStyles = `
+const cardBaseStyles: string = `
     border-radius: 10px;
     background-color: ${background};
 `;
@@ -12,6 +12,7 @@ const cardBaseStyles = `
 export const CardContainer = styled.div`
     ${cardBaseStyles}
     display: flex;
+    flex-direction: column;
     border: 10px solid ${background};
 
     @media screen and (max-width: 767px) {
@@ -45,10 +46,11 @@ export const CardLeft = styled(Card)`
     background-color: #525B76;
     position: fixed;
     padding: 10px;
-    left: 20px;
+    left: 37%;
     top: 80px;
     @media screen and (max-width: 767px) {
-        left: 50;
+        left: 20px;
+        top: 20px;
     }
     button{
         background-color: transparent;

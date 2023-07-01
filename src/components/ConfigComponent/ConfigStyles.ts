@@ -9,8 +9,12 @@ export const CardEl = styled.div`
     padding: 10px;
     background-color: #181818;
     position: fixed;
-    left: 20px;
-    top: 20px;
+    right: 37%;
+    top: 80px;
+    @media screen and (max-width: 767px) {
+        right: 50px;
+        top: 20px;
+    }
     cursor: pointer;
       
     div{
@@ -28,9 +32,6 @@ export const CardEl = styled.div`
         display: flex;
         gap: 10px;
         flex-direction: column;
-    }
-        @media screen and (max-width: 767px) {
-        border: 2px solid #C4F1BE;
     }
 `
 export const StyledButton = styled.button`
